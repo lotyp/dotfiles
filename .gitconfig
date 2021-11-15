@@ -1,0 +1,43 @@
+[user]
+    name = {{ dev_env_git_name | default('lotyp') }}
+    email = {{ dev_env_git_email | default('lotyp7@gmail.com') }}
+
+[core]
+    excludesfile = ~/.gitignore
+    whitespace = cr-at-eol
+    editor = nano
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+
+[init]
+    defaultBranch = master
+
+[web]
+  browser = google-chrome
+
+[credential]
+  helper = osxkeychain
+
+[push]
+    default = current
+
+[alias]
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    co = checkout
+    aa = add --all
+    st = status -s
+    l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+    lo = log --oneline
+    d = diff
+    dc = diff --cached
+
+[pull]
+	rebase = false

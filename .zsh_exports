@@ -1,0 +1,21 @@
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='nano'
+fi
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+
+export GPG_TTY=$(tty)
+
+export DOCKER_USERNAME={{ dev_env_docker_username }}
+export DOCKER_PASSWORD={{ dev_env_docker_password }}
+
+export COMPOSER_AUTH='{"github-oauth": {"github.com": "{{ dev_env_docker_github_api_token }}"}}'

@@ -1,0 +1,15 @@
+alias prj="cd ~/Projects"
+
+alias g="git"
+alias gitc="git cz commit"
+alias gitp="git push --follow-tags origin master"
+
+alias h="history"
+alias j="jobs"
+
+alias ll="ls -lhF -G"
+alias la="ls -lhaF -G"
+
+alias d="docker"
+alias dc="docker-compose"
+alias ds="docker-sync"

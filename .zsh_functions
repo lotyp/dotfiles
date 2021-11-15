@@ -1,0 +1,23 @@
+# Docker
+function ssh-docker() {
+   docker exec -it "$@" bash
+}
+
+# Create a new directory and enter it
+function mkd() {
+   mkdir -p "$@" && cd "$@"
+}
+
+# All the dig info
+function digga() {
+	dig +nocmd "$1" any +multiline +noall +answer
+}
+
+archive () {
+   zip -r "$1".zip -i "$1" ;
+}
+
+function removehost() {
+   ssh-keygen -R "$1"
+}
+
