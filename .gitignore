@@ -21,12 +21,15 @@
 
 # OS generated files
 .DS_Store
+Desktop.ini
 .DS_Store?
 ._*
-.Spotlight-V100
-.Trashes
 *.LSOverride
 Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
 
 # Apps
 .idea
@@ -34,6 +37,9 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 .vscode
+
+# Compiled Python files
+*.pyc
 
 # Custom
 composer.lock
