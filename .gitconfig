@@ -12,15 +12,13 @@
     attributesfile = ~/.gitattributes
 
     whitespace = cr-at-eol
-    editor = nano
+    editor = subl
 
     # Speed up commands involving untracked files such as `git status`.
     # https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
 
 [color]
-    # Use colors in Git commands that are capable of colored output when
-    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
     ui = auto
     interactive = auto
 
@@ -56,20 +54,9 @@
     followTags = true
 
 [alias]
-#     c = commit
-#     ca = commit -a
-#     cm = commit -m
-#     cam = commit -am
-#     co = checkout
-#     aa = add --all
-#     st = status -s
-#     l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
-#     lo = log --oneline
-#     d = diff
-#     dc = diff --cached
-
     # View abbreviated SHA, description, and history graph of the latest 20 commits.
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    lo = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
 
     # View the current working tree status using the short format.
     s = status -s
@@ -134,6 +121,9 @@
     # Show the user email for the current repository.
     whoami = config user.email
 
+    # Pull all branches
+    pull-branches = "!git branch -a | grep -v HEAD | perl -ne 'chomp($_); s|^\\*?\\s*||; if (m|(.+)/(.+)| && not $d{$2}) {print qq(git branch --track $2 $1/$2\\n)} else {$d{$_}=1}' | csh -xfs #"
+
 [pull]
     rebase = false
 
@@ -178,3 +168,9 @@
 [diff "bin"]
     # Use `hexdump` to diff binary files.
     textconv = hexdump -v -C
+
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process

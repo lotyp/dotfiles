@@ -6,12 +6,15 @@ export LC_ALL='en_US.UTF-8'
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nano'
 else
-    export EDITOR='nano'
+    export EDITOR='subl'
 fi
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
@@ -37,18 +40,6 @@ export NVM_DIR="$HOME/.nvm"
 ### Python
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8'
-
-### Zsh / Bash
-# Increase Bash history size. Allow 32³ entries;
-export HISTSIZE='32768'
-export HISTFILE="$HOME/.zsh_history"
-export SAVEHIST=$HISTSIZE
-
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-
-# Highlight section titles in manual pages.
-export LESS_TERMCAP_md="${yellow}"
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X'

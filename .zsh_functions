@@ -20,4 +20,3 @@ archive () {
 function removehost() {
    ssh-keygen -R "$1"
 }
-

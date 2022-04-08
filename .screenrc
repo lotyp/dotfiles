@@ -1,3 +1,5 @@
+# https://serverfault.com/questions/3740/what-are-useful-screenrc-settings
+
 # Disable the startup message
 startup_message off
 
@@ -6,3 +8,6 @@ defscrollback 32000
 
 # Always start `screen` with UTF-8 enabled (`screen -U`)
 defutf8 on
+
+# Refresh the display when exiting programs like vim, nano, irssi and etc.
+altscreen on
