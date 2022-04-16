@@ -25,6 +25,8 @@ jobs:
 
       - name: Test OSX Setup Script.
         run: |
+          defaults read > defaults.before
           set -eux
           sudo bash .osx --no-restart
-          defaults read
+          defaults read > defaults.after
+          diff defaults.before defaults.after
