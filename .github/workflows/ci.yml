@@ -29,5 +29,4 @@ jobs:
           set -eux
           sudo bash .osx --no-restart
           defaults read > defaults.after
-          diff defaults.before defaults.after > diff.txt
-          cat diff.txt
+          diff defaults.before defaults.after || true
