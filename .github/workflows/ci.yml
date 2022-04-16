@@ -24,4 +24,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test OSX Setup Script.
-        run: bash .osx --no-restart
+        run: |
+          set -eux
+          sudo bash .osx --no-restart
