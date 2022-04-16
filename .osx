@@ -145,7 +145,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Riga" >/dev/null
+sudo systemsetup -settimezone "Europe/Riga" >/dev/null 2>&1
 
 # Add input sources - Latvian and Russian - Phonetic
 defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>19457</integer><key>KeyboardLayout Name</key><string>Russian - Phonetic</string></dict>'
@@ -442,4 +442,5 @@ if [[ ! ($* == *--no-restart*) ]]; then
     done
 fi
 
-printf "\x1b[1;32mDone.\nNote that some of these changes require a logout/restart to take effect.\n\e[0m"
+printf "\x1b[1;32mDone.\n\e[0m"
+printf "\x1b[1;32mNote that some of these changes require a logout/restart to take effect.\n\e[0m"

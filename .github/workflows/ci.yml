@@ -27,3 +27,4 @@ jobs:
         run: |
           set -eux
           sudo bash .osx --no-restart
+          defaults read
