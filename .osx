@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-printf "Starting to apply custom osx settings.\n"
+printf "\x1b[1;32mStarting to apply custom osx settings.\n\e[0m"
 
 # Mac OS X configuration
 #
@@ -33,7 +33,7 @@ USERNAME=$(whoami)
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
     RUN_AS_ROOT=false
-    printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n" | fold -s -w 80
+    printf "\x1b[1;31mCertain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n\e[0m" | fold -s -w 80
 else
     RUN_AS_ROOT=true
     # Keep-alive: Update existing `sudo` timestamp until `.osx` has finished
@@ -202,7 +202,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 ###############################################################################
 
 # Allow quitting via ⌘ + Q; doing so will also hide desktop icons
-# defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder QuitMenuItem -bool true
 
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
@@ -331,18 +331,15 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 ###############################################################################
 
 ### Dock
+### Some examples can be found here:
+### https://macos-defaults.com
+
+# Enable spring loading for all Dock items
+# https://macos-defaults.com/misc/enable-spring-load-actions-on-all-items.html#set-to-false-default-value
+defaults write com.apple.dock "enable-spring-load-actions-on-all-items" -bool "true"
 
 # Don’t show recent applications in Dock
-defaults write com.apple.dock show-recents -bool false
-
-# Remove the auto-hiding Dock delay
-# defaults write com.apple.dock autohide-delay -float 0
-
-# Remove the animation when hiding/showing the Dock
-# defaults write com.apple.dock autohide-time-modifier -float 0
-
-# Automatically hide and show the Dock
-# defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock "show-recents" -bool false
 
 # Reset Launchpad, but keep the desktop wallpaper intact
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
@@ -413,6 +410,16 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 
 ###############################################################################
+# Feedback Assistant                                                          #
+###############################################################################
+
+### Autogather
+
+defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false"
+
+
+
+###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 
@@ -435,4 +442,4 @@ if [[ ! ($* == *--no-restart*) ]]; then
     done
 fi
 
-printf "Done.\nNote that some of these changes require a logout/restart to take effect.\n"
+printf "\x1b[1;32mDone.\nNote that some of these changes require a logout/restart to take effect.\n\e[0m"
