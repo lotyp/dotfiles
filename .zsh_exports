@@ -20,13 +20,6 @@ export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty)
 
-### Docker
-export DOCKER_USERNAME={{ dev_env_docker_username }}
-export DOCKER_PASSWORD={{ dev_env_docker_password }}
-
-### Composer
-export COMPOSER_AUTH='{"github-oauth": {"github.com": "{{ dev_env_docker_github_api_token }}"}}'
-
 ### Node
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history
