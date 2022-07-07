@@ -43,3 +43,4 @@ alias bcat='bat --theme=OneHalfDark'
 alias df='df -kh'
 alias du='du -kh'
 
+
