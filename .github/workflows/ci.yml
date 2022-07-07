@@ -27,6 +27,6 @@ jobs:
         run: |
           defaults read > defaults.before
           set -eux
-          sudo bash .osx --no-restart
+          bash .osx --no-restart
           defaults read > defaults.after
           diff defaults.before defaults.after || true
