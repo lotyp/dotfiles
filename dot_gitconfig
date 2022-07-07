@@ -1,0 +1,34 @@
+[user]
+    name = lotyp
+    email = lotyp7@gmail.com
+    signingkey = 90C6A6667D25951EA155ED6F49DC9915D0C04F5C
+
+[color]
+    ui = auto
+
+[alias]
+    ci = commit
+    co = checkout
+    aa = add --all
+    st = status -s
+    lo = log --oneline
+    pull-branches = "!git branch -a | grep -v HEAD | perl -ne 'chomp($_); s|^\\*?\\s*||; if (m|(.+)/(.+)| && not $d{$2}) {print qq(git branch --track $2 $1/$2\\n)} else {$d{$_}=1}' | csh -xfs #"
+    logs = log --show-signature
+
+[core]
+    excludesfile = ~/.gitignore
+    whitespace=cr-at-eol
+    editor = nano
+
+[push]
+    default = current
+
+[init]
+    defaultBranch = master
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[commit]
+    gpgsign = true
