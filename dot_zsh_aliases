@@ -1,3 +1,5 @@
+# -*-mode:sh-*- vim:ft=shell-script
+
 alias cm="chezmoi"
 
 alias prj="cd ~/Projects"

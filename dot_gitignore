@@ -1,3 +1,5 @@
+# -*-mode:gitignore-*- vim:ft=gitignore
+
 # Compiled source
 *.com
 *.class
@@ -51,4 +53,5 @@ vendor
 npm-debug.log
 yarn-error.log
 .phpunit-watcher-cache.php
-
+venv/
+.venv/
