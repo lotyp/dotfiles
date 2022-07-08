@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/lotyp/dotfiles/compare/v1.0.0...v1.1.0) (2022-07-08)
+
+
+### Features
+
+* adding more system tool config files ([da08cc2](https://github.com/lotyp/dotfiles/commit/da08cc2ad373472b8ab00bdfe15adae1f2de1a3c))
+* adding zsh extra files ([5a3ae25](https://github.com/lotyp/dotfiles/commit/5a3ae25d9944f08df16ac28ce5d73f4c9404574f))
+
+
+### Bug Fixes
+
+* adding changelog to chezmoi ignore ([711c00c](https://github.com/lotyp/dotfiles/commit/711c00cc0112f90c09bfc65c011825844ff159b6))
+
 ## 1.0.0 (2022-07-07)
 
 
