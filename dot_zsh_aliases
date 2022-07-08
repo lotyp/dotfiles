@@ -1,0 +1,45 @@
+alias cm="chezmoi"
+
+alias prj="cd ~/Projects"
+
+alias g="git"
+alias gitp="git push --follow-tags origin master"
+
+alias h="history"
+alias j="jobs"
+
+alias ll="ls -lhF -G"
+alias la="ls -lhaF -G"
+
+alias d="docker"
+alias dc="docker-compose"
+alias ds="docker-sync"
+
+#
+# Super short commands for IDEs
+#
+alias s="subl"
+alias p="phpstorm"
+
+#
+# Vim/neovim
+#
+if type nvim > /dev/null 2>&1; then
+  alias vim="nvim"
+fi
+
+#
+# Pretty print the PATH
+#
+alias path='echo $PATH | tr -s ":" "\n"'
+
+#
+# Upgraded cat
+#
+alias bcat='bat --theme=OneHalfDark'
+
+#
+# df/du
+#
+alias df='df -kh'
+alias du='du -kh'

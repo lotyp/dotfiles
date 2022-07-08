@@ -1,0 +1,28 @@
+#
+# Docker
+#
+function ssh-docker() {
+    docker exec -it "$@" bash
+}
+
+#
+# Network
+#
+function digga() {
+    dig +nocmd "$1" any +multiline +noall +answer
+}
+
+#
+# System
+#
+archive() {
+   zip -r "$1".zip -i "$1" ;
+}
+
+function removehost() {
+   ssh-keygen -R "$1"
+}
+
+function mkd() {
+   mkdir -p "$@" && cd "$@"
+}

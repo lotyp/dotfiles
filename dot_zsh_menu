@@ -1,0 +1,5 @@
+source .zsh_spaceship
+source .zsh_secrets 2> /dev/null || true
+source .zsh_exports
+source .zsh_aliases
+source .zsh_functions
