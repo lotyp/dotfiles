@@ -16,21 +16,33 @@
     signingkey = "{{ .signingkey }}"
 
 [commit]
+    # https://help.github.com/articles/signing-commits-using-gpg/
     gpgsign = true
-    template = ~/.gitmessage.txt
 
-[color]
-    ui = auto
+    # Specify template file for new commit messages.
+    template = ~/.gitmessage.txt
 
 [core]
     # Store global exclusions into a custom file.
     excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes
 
     whitespace=cr-at-eol
     editor = nano
 
+[pull]
+    rebase = false
+
 [push]
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
     default = current
+
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
+
+[color]
+    ui = auto
+    interactive = auto
 
 [init]
     defaultBranch = master
@@ -49,12 +61,43 @@
     process = git-lfs filter-process
 
 [help]
-    # Correct and execute mistyped commands.
+    # Automatically correct and execute mistyped commands.
     autocorrect = 1
 
 [rebase]
     # Create a temporary stash entry before the operation begins.
     autostash = true
+
+[branch]
+    # Show most recently changed branches first.
+    sort = -committerdate
+
+[web]
+    browser = google-chrome
+
+[credential]
+{{ if eq .chezmoi.os "darwin" -}}
+    helper = osxkeychain
+{{- end }}
+
+[apply]
+    # Detect whitespace errors when applying a patch.
+    whitespace = fix
+
+[diff]
+    # List submodules commits in the range.
+    submodule = log
+
+    # Detect copies as well as renames.
+    renames = copies
+
+[diff "bin"]
+    # Use `hexdump` to diff binary files.
+    textconv = hexdump -v -C
+
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages.
+    log = true
 
 [include]
     # Include aliases.

@@ -6,6 +6,13 @@ export LANG = en_US.UTF-8
 INSTALL_POETRY ?= true
 POETRY_BIN ?= poetry
 POETRY_RUNNER ?= poetry run
+CM_BIN ?= chezmoi
+CM_REPOSITORY ?= https://github.com/lotyp/dotfiles.git
+
+install-cm:
+	# @todo
+	# https://github.com/chezmoi/dotfiles/blob/master/install.sh
+.PHONY: install-cm
 
 install-deps:
 	$(POETRY_BIN) install
@@ -19,6 +26,11 @@ else
 	@exit 0
 endif
 .PHONY: install-poetry
+
+# Init chezmoi
+init:
+	$(CM_BIN) init $(CM_REPOSITORY)
+.PHONY: init
 
 ### Git
 hooks:
