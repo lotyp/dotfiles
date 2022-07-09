@@ -1,0 +1,61 @@
+# ~/.gitconfig
+# =============================================================================
+# User-specific Git configuration file.
+#
+# See https://git-scm.com/docs/git-config
+#
+# {{- /* This file supports Go's text/template language. */ -}}
+#
+# Sources:
+#   https://git-scm.com/docs/git-config/
+#   https://github.com/renemarc/dotfiles/blob/master/dot_gitconfig.tmpl
+
+[user]
+    name = "{{ .name }}"
+    email = "{{ .email }}"
+    signingkey = "{{ .signingkey }}"
+
+[commit]
+    gpgsign = true
+    template = ~/.gitmessage.txt
+
+[color]
+    ui = auto
+
+[core]
+    # Store global exclusions into a custom file.
+    excludesfile = ~/.gitignore_global
+
+    whitespace=cr-at-eol
+    editor = nano
+
+[push]
+    default = current
+
+[init]
+    defaultBranch = master
+
+[filter "lfs"]
+    # Turn a content that by itself is unusable into a usable content.
+    required = true
+
+    # Specify the command to convert a worktree file's content to a blob upon checkin.
+    clean = git-lfs clean -- %f
+
+    # Specify the command to convert a blob object's content to a worktree file upon checkout.
+    smudge = git-lfs smudge -- %f
+
+    # Convert between Large File Storage pointer and actual content.
+    process = git-lfs filter-process
+
+[help]
+    # Correct and execute mistyped commands.
+    autocorrect = 1
+
+[rebase]
+    # Create a temporary stash entry before the operation begins.
+    autostash = true
+
+[include]
+    # Include aliases.
+    path = .gitconfig_aliases
