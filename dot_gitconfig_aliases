@@ -1,5 +1,3 @@
-# -*-mode:gitconfig-*- vim:ft=gitconfig
-
 # ~/.gitconfig_alias
 # =============================================================================
 # Aliases for Git sourced by `~/.gitconfig`.

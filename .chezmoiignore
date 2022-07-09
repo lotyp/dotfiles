@@ -1,5 +1,3 @@
-# -*-mode:gitignore-*- vim:ft=gitignore
-
 # Defines list of globs to exclude from copying to target user directory.
 # Supports Go's text/template language.
 # Location: ~/.local/share/chezmoi/.chezmoiignore

@@ -1,5 +1,3 @@
-# -*-mode:nanorc-*- vim:ft=nanorc
-
 # Indent new lines to the previous line's indentation.
 set autoindent
 

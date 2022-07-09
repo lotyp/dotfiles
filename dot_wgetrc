@@ -1,5 +1,3 @@
-# -*-mode:conf-*- vim:ft=wgetrc
-
 ## https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html
 ##
 ## Local settings (for a user to set in his $HOME/.wgetrc).  It is
