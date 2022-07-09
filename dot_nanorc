@@ -1,3 +1,9 @@
+# ~/.nanorc
+# =============================================================================
+# Configures default options for text editor Nano.
+#
+# See https://www.nano-editor.org/
+
 # Indent new lines to the previous line's indentation.
 set autoindent
 

@@ -1,8 +1,12 @@
-# Resource about curl.
-# https://everything.curl.dev/
+# ~/.curlrc
+# =============================================================================
+# Configures startup options for cURL.
+#
+# See https://everything.curl.dev/
+#
 
-# Disguise as IE 9 on Windows 7.
-user-agent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
+# Disguise as Firefox 72 on Windows 10
+user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"
 
 # When following a redirect, automatically set the previous URL as referer.
 referer = ";auto"

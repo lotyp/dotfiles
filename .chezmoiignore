@@ -1,6 +1,7 @@
+# ~/.local/share/chezmoi/.chezmoiignore
+# =============================================================================
 # Defines list of globs to exclude from copying to target user directory.
 # Supports Go's text/template language.
-# Location: ~/.local/share/chezmoi/.chezmoiignore
 #
 # See https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
 #

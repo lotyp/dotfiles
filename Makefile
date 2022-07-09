@@ -1,4 +1,3 @@
-
 export PY_COLORS = 1
 export PYTHONIOENCODING = UTF-8
 export LC_CTYPE = en_US.UTF-8

@@ -1,26 +1,50 @@
-# EditorConfig is awesome:
-# https://EditorConfig.org
-# https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig
+# ~/.local/share/chezmoi/.editorconfig
+# =============================================================================
+# Repo-specific EditorConfig file for supporting IDEs.
+#
+# Helps maintaining a consistent coding style between different editors.
+# See https://EditorConfig.org
+#     https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig
 
+# Define this as the top-most EditorConfig file.
 root = true
 
+# All files
+# -----------------------------------------------------------------------------
 [*]
 charset = utf-8
+# Set line endings to Unix style.
 end_of_line = lf
 insert_final_newline = true
 indent_style = space
+indent_size = 4
+# Remove any whitespace characters preceding newline characters.
 trim_trailing_whitespace = true
-# indent_size = 4
 
+# Markdown
+# -----------------------------------------------------------------------------
 [*.md]
+# Keep trailing whitespaces as they have meaning on Markdown interpretation.
 trim_trailing_whitespace = false
 
-[*.json]
-indent_size = 4
+# Toml
+# -----------------------------------------------------------------------------
+[*.toml]
+indent_size = 2
 
+# Yaml
+# -----------------------------------------------------------------------------
 [*.{yml,yaml}]
 indent_size = 2
 
+# Makefile
+# -----------------------------------------------------------------------------
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
+
+# Powershell
+# -----------------------------------------------------------------------------
+[*.{ps1,psd1,psm1,ps1xml}]
+# Set line endings to Windows style.
+end_of_line = crlf

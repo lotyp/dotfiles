@@ -1,3 +1,9 @@
+# ~/.gitattributes
+# =============================================================================
+# User-specific Git file that gives attributes to pathnames.
+#
+# See https://git-scm.com/docs/gitattributes
+
 ### Git Line Endings
 # Automatically normalize line endings for all text-based files
 * text=auto

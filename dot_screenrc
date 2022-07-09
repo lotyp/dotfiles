@@ -1,4 +1,9 @@
-# https://serverfault.com/questions/3740/what-are-useful-screenrc-settings
+# ~/.nanorc
+# =============================================================================
+# Configures default options for terminal multiplexer – screen
+#
+# See https://www.gnu.org/software/screen/manual/screen.html
+#     https://serverfault.com/questions/3740/what-are-useful-screenrc-settings
 
 # Disable the startup message
 startup_message off

@@ -1,6 +1,17 @@
+# ~/.zsh_exports
+# =============================================================================
+# Shell exports sourced by `~/.zshrc`.
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nano'
 else
     export EDITOR='subl'
 fi
+
+# Hide the “default interactive shell is now zsh” warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty)

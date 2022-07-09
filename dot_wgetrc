@@ -1,12 +1,16 @@
-## https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html
-##
-## Local settings (for a user to set in his $HOME/.wgetrc).  It is
-## *highly* undesirable to put these settings in the global file, since
-## they are potentially dangerous to "normal" users.
-##
-## Even when setting up your own ~/.wgetrc, you should know what you
-## are doing before doing so.
-##
+# ~/.wgetrc
+# =============================================================================
+# Configures startup options for GNU Wget HTTP/FTP file downloader.
+#
+# See https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html
+# See https://www.gnu.org/software/wget/manual/html_node/Sample-Wgetrc.html
+#
+# Local settings (for a user to set in his $HOME/.wgetrc).  It is
+# *highly* undesirable to put these settings in the global file, since
+# they are potentially dangerous to "normal" users.
+#
+# Even when setting up your own ~/.wgetrc, you should know what you
+# are doing before doing so.
 
 # Use the server-provided last modification date, if available
 timestamping = on
@@ -36,7 +40,7 @@ adjust_extension = on
 # Disabled as it makes `wget` builds that don’t support this feature unusable.
 # Does anyone know how to conditionally configure a wget setting?
 # http://unix.stackexchange.com/q/34730/6040
-#local_encoding = UTF-8
+# local_encoding = UTF-8
 
 # Ignore `robots.txt` and `<meta name=robots content=nofollow>`
 robots = off
@@ -44,5 +48,8 @@ robots = off
 # Print the HTTP and FTP server responses
 server_response = on
 
-# Disguise as IE 9 on Windows 7
-user_agent = Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+# Disguise as Firefox 72 on Windows 10
+user_agent = Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0
+
+# Force continuation of preexistent partially retrieved files, like `--c`.
+continue = on

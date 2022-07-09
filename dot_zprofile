@@ -1,1 +1,5 @@
+# ~/.zprofile
+# =============================================================================
+# Z Shell startup file. If the shell is a login shell, commands are read from `.zprofile`.
+
 eval "$(/opt/homebrew/bin/brew shellenv)"

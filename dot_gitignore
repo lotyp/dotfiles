@@ -1,3 +1,10 @@
+# ~/.gitignore_global
+# =============================================================================
+# Used by Git to determine the files and directories to ignore globally.
+#
+# This list defines global exclusions to all local repositories.
+# See https://git-scm.com/docs/gitignore
+
 # Compiled source
 *.com
 *.class

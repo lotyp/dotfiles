@@ -1,3 +1,7 @@
+# ~/.zsh_aliases
+# =============================================================================
+# Shell aliases sourced by `~/.zshrc`.
+
 alias cm="chezmoi"
 
 alias prj="cd ~/Projects"
