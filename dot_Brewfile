@@ -1,0 +1,46 @@
+# ~/.Brewfile
+# =============================================================================
+# Project dependencies installed using `brew bundle` or https://github.com/wayofdev/mac-provisioner
+#
+# See https://github.com/Homebrew/homebrew-bundle
+
+tap "homebrew/bundle"
+tap "buo/cask-upgrade"                      # https://github.com/buo/homebrew-cask-upgrade
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+
+brew "zsh"                                  # UNIX shell (command interpreter)
+brew "autoconf"                             # Configuration shell script maker
+brew "bash"                                 # Bourne again shell
+brew "neofetch"                             # System information tool
+brew "nano"                                 # Nano text editor
+brew "htop"                                 # Interactive system-monitor
+brew "gnupg"                                # GNU privacy guard
+brew "chezmoi"                              # Chezmoi dotfiles manager
+brew "wget"                                 # Web content downloader
+brew "unison"                               # Unison file synchronizer
+brew "telnet"                               # Virtual terminal client
+brew "rsync"                                # File transfer and sync tool
+brew "ripgrep"                              # Recursive Regex search tool
+brew "rbenv"                                # Ruby environment manager
+brew "ruby-build"                           # Ruby version manager
+brew "less"                                 # Terminal pager
+brew "lesspipe"                             # Input filter for `less`
+brew "geoip"                                # Geographic IP lookup
+brew "fswatch"                              # File change monitor
+brew "flake8"                               # Python style guide enforcer
+brew "shellcheck"                           # Static analysis and lint tool, for (ba)sh scripts
+brew "bat"                                  # Clone of cat tool with syntax highlighting and Git integration
+brew "mackup"                               # Keep your Mac's application settings in sync
+brew "mc"                                   # Terminal-based visual file manager
+brew "mpdecimal"                            # Library for decimal floating point arithmetic
+brew "neovim"                               # Ambitious Vim-fork focused on extensibility and agility
+brew "shfmt"                                # Autoformat shell script source code
+brew "sqlite"                               # Command-line interface for SQLite
+brew "curl"                                 # Get a file from an HTTP, HTTPS or FTP server
+brew "screen"                               # Terminal multiplexer
+
+cask "font-hack-nerd-font"
+cask "iterm2"

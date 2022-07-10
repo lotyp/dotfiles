@@ -30,9 +30,11 @@ If you **like/use** this role, please consider **starring** it. Thanks!
 
 ## 🗂 Table of Contents
 
-* [Supported Toolset](#️-supported-toolset)
+* [Supported Toolset](#-supported-toolset)
+  * [Terminal](#-terminal)
   * [Shell](#-shell)
-  * [Terminal Theme](#-terminal-theme)
+  * [Shell Theme](#-shell-theme)
+  * [Package Management](#-package-management)
   * [System Configs](#-system-configs)
 * [Included Aliases and Commands](#-included-aliases-and-commands)
   * [Easier Navigation](#-easier-navigation)
@@ -44,8 +46,9 @@ If you **like/use** this role, please consider **starring** it. Thanks!
   * [Paths](#-paths)
   * [Configuration Paths](#-configuration-paths)
   * [IDE's and Editors](#-ides-and-editors)
+  * [Development](#-development)
 * [License](#-license)
-* [Author Information](#️-author-information)
+* [Author Information](#-author-information)
 * [Credits and Resources](#-credits-and-resources)
 * [Contributors](#-contributors)
 
@@ -54,6 +57,14 @@ If you **like/use** this role, please consider **starring** it. Thanks!
 ## 🛠️ Supported Toolset
 
 Use either one or many of these, the config files will be in place and ready to provide a familiar interface.
+
+### → Terminal
+
+Currently only supported is [iTerm2](https://iterm2.com/) for macOS, but I plan to add [Hyper](https://hyper.is/) to support Linux nativley and on WSL.
+
+| Name                          | Description                 | Config             |
+| ----------------------------- | --------------------------- | ------------------ |
+| [iTerm2](https://iterm2.com/) | terminal emulator for macOS | `~/.config/iterm/` |
 
 ### → Shell
 
@@ -67,6 +78,14 @@ Use either one or many of these, the config files will be in place and ready to 
 | Name                                                         | Description      | Config             |
 | ------------------------------------------------------------ | ---------------- | ------------------ |
 | [spaceship](https://github.com/spaceship-prompt/spaceship-prompt) | zsh prompt theme | `~/.zsh_spaceship` |
+
+### → Package Management
+
+Only minimal list of apps are defined in `~/.Brewfile`. For full macOS installation and configuration refer to ansible playbook — [mac provisioner](https://github.com/wayofdev/mac-provisioner)
+
+| Name                        | Description               | Config        |
+| --------------------------- | ------------------------- | ------------- |
+| [Homebrew](https://brew.sh) | package manager for macOS | `~/.Brewfile` |
 
 ### → System Configs
 
