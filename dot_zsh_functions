@@ -1,32 +1,52 @@
 # ~/.zsh_functions
 # =============================================================================
 # Shell functions sourced by `~/.zshrc`.
+#
+# More examples: https://github.com/renemarc/dotfiles/blob/master/dot_bash_functions
 
-#
 # Docker
-#
+# -----------------------------------------------------------------------------
 function ssh-docker() {
     docker exec -it "$@" bash
 }
 
-#
+
 # Network
-#
+# -----------------------------------------------------------------------------
 function digga() {
     dig +nocmd "$1" any +multiline +noall +answer
 }
 
-#
+
 # System
-#
+# -----------------------------------------------------------------------------
 archive() {
    zip -r "$1".zip -i "$1" ;
 }
 
+# Removes host from ssh known-hosts file
 function removehost() {
    ssh-keygen -R "$1"
 }
 
+# Recursively creates directory and navigates into it
+# Usage: `mkd <directory>`
 function mkd() {
-   mkdir -p "$@" && cd "$@"
+    if [ -z "$1" ]; then
+        echo "Usage: mkd <path>"
+        echo "Help: mkd creates a directory if it doesn't exist, then changes to it."
+        return 0
+    fi
+
+    mkdir -p -- "$@" && cd -P -- "$_" || exit;
+}
+
+# Searches history for a string, or lists all history.
+# Syntax: `historysearch <string>`
+function history_search() {
+    if [ -z "$1" ]; then
+        history
+    else
+        history | grep "$1"
+    fi
 }
