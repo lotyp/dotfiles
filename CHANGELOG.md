@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.0](https://github.com/lotyp/dotfiles/compare/v1.1.0...v1.2.0) (2022-07-10)
+
+
+### Features
+
+* add .nanorc and file types ([52fae17](https://github.com/lotyp/dotfiles/commit/52fae17844d6d54637bf384f173cee3c16c2ee8f))
+* add gitmessage, move aliases to separate file ([5d3c3d6](https://github.com/lotyp/dotfiles/commit/5d3c3d62155f46c16224c87750d614d74a11d854))
+* adding chezmoi template and migrating gitconfig ([a0f38d7](https://github.com/lotyp/dotfiles/commit/a0f38d7d0957401a793ed4ed5b358bd4d1363c01))
+* adding git aliases ([3c21ea9](https://github.com/lotyp/dotfiles/commit/3c21ea94529a5178dd1d091ec41c33b375be84a2))
+* aliases, functions and readme file ([42e0d49](https://github.com/lotyp/dotfiles/commit/42e0d49d9fd71219d3610e99f83ff1c5acdc5b35))
+
+
+### Bug Fixes
+
+* sourcing was not working in relative paths ([19f7fa2](https://github.com/lotyp/dotfiles/commit/19f7fa2b22c403b4f489301ef98020c37594c5b9))
+
 ## [1.1.0](https://github.com/lotyp/dotfiles/compare/v1.0.0...v1.1.0) (2022-07-08)
 
 
