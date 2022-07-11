@@ -14,6 +14,7 @@ ZSH_THEME="spaceship"
 zstyle ':omz:update' mode auto
 
 plugins=(
+    last-working-dir
     git
     keychain
     gpg-agent
