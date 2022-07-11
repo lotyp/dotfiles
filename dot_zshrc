@@ -17,8 +17,9 @@ plugins=(
     git
     keychain
     gpg-agent
-    zsh-autosuggestions
     sudo
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source ${ZSH}/oh-my-zsh.sh

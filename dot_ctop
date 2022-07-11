@@ -1,0 +1,16 @@
+# ~/.ctop
+# =============================================================================
+# Configures settings for ctop – "top-like interface for container metrics"
+#
+# See https://github.com/bcicen/ctop
+
+[options]
+  columns = "status,name,id,cpu,mem,net,io,pids,uptime"
+  filterStr = ""
+  sortField = "state"
+
+[toggles]
+  allContainers = true
+  enableHeader = true
+  fullRowCursor = true
+  sortReversed = false

@@ -33,6 +33,7 @@ If you **like/use** this role, please consider **starring** it. Thanks!
 * [Supported Toolset](#-supported-toolset)
   * [Terminal](#-terminal)
   * [Shell](#-shell)
+  * [Shell Plugins](#-shell-plugins)
   * [Shell Theme](#-shell-theme)
   * [Package Management](#-package-management)
   * [System Configs](#-system-configs)
@@ -82,8 +83,9 @@ List of enabled built-in and third-party omz plugins by default. Plu
 | [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) | Provides many [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases) and a few useful [functions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#functions) |
 | [keychain](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/keychain) | Starts [`keychain`](https://www.funtoo.org/Keychain) to set up and load whichever credentials you want for both gpg and ssh connections |
 | [gpg-agent](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gpg-agent/README.md) | Enables [GPG's gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/) if it is not running |
-| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) _<sup>[3rd-party]</sup>_ | Suggests commands as you type based on history and completions |
 | [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo) | Prefix previous commands with `sudo` by pressing `esc` twice |
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) _<sup>[3rd-party]</sup>_ | Suggests commands as you type based on history and completions |
+| [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) _<sup>[3rd-party]</sup>_ | Enables highlighting of commands whilst they are typed       |
 
 ### → Shell Theme
 
@@ -103,17 +105,18 @@ For full macOS installation and configuration refer to ansible playbook — [mac
 
 ### → System Configs
 
-| Name                                           | Description                           | Config                            |
-| ---------------------------------------------- | ------------------------------------- | --------------------------------- |
-| [chezmoi](https://www.chezmoi.io/)             | dotfiles manager                      | `~/.chezmoi.toml`                 |
-| [curl](https://curl.se)                        | data transfer tool                    | `~/.curlrc`                       |
-| [git](https://git-scm.com)                     | version control system                | `~/.gitconfig`                    |
-| [nano](https://www.nano-editor.org)            | small terminal text editor            | `~/.nanorc`                       |
-| [sqlite3](https://www.sqlite.org/cli.html)     | sql database engine (client settings) | `~/.sqliterc`                     |
-| [wget](https://www.gnu.org/software/wget/)     | data transfer tool                    | `~/.wgetrc`                       |
-| [screen](https://www.gnu.org/software/screen/) | full-screen window manager            | `~/.screenrc`                     |
-| [editorconfig](https://editorconfig.org)       | coding styles for IDE's and editors   | `~/.editorconfig`                 |
-| [iterm2](https://iterm2.com)                   | iterm2 shell integration script       | `~/.iterm2_shell_integration.zsh` |
+| Name                                           | Description                               | Config                            |
+| ---------------------------------------------- | ----------------------------------------- | --------------------------------- |
+| [chezmoi](https://www.chezmoi.io/)             | dotfiles manager                          | `~/.chezmoi.toml`                 |
+| [curl](https://curl.se)                        | data transfer tool                        | `~/.curlrc`                       |
+| [git](https://git-scm.com)                     | version control system                    | `~/.gitconfig`                    |
+| [nano](https://www.nano-editor.org)            | small terminal text editor                | `~/.nanorc`                       |
+| [sqlite3](https://www.sqlite.org/cli.html)     | sql database engine (client settings)     | `~/.sqliterc`                     |
+| [wget](https://www.gnu.org/software/wget/)     | data transfer tool                        | `~/.wgetrc`                       |
+| [screen](https://www.gnu.org/software/screen/) | full-screen window manager                | `~/.screenrc`                     |
+| [editorconfig](https://editorconfig.org)       | coding styles for IDE's and editors       | `~/.editorconfig`                 |
+| [iterm2](https://iterm2.com)                   | iterm2 shell integration script           | `~/.iterm2_shell_integration.zsh` |
+| [ctop](https://github.com/bcicen/ctop)         | htop-like interface for container metrics | `~/.ctop`                         |
 
 <br>
 
@@ -180,7 +183,8 @@ Additional aliases are provided by [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzs
 | --------- | ------------------------------------------------------------ |
 | `mnt`     | Lists drive mounts                                           |
 | `sysinfo` | Shows system info using [neofetch](https://github.com/dylanaraps/neofetch) |
-| `top`     | Monitors processes and system resources, uses [htop](https://hisham.hm/htop/). |
+| `top`     | Monitors processes and system resources, uses [htop](https://hisham.hm/htop/) |
+| `ctop`    | htop-like interface for container metrics. [See here](https://github.com/bcicen/ctop) |
 
 ### → Power Management
 
@@ -250,6 +254,7 @@ Created in **2022** by [lotyp / wayofdev](https://github.com/wayofdev)
 
 * [Why use chezmoi?](https://www.chezmoi.io/why-use-chezmoi/)
 * great repository, which shows power of chezmoi [renemarc/dotfiles](https://github.com/renemarc/dotfiles)
+* template repository using chezmoi — [chezmoi/dotfiles](https://github.com/chezmoi/dotfiles)
 
 <br>
 
