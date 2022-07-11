@@ -27,6 +27,7 @@
 *.sqlite
 
 # OS generated files
+*~
 .DS_Store
 Desktop.ini
 .DS_Store?
@@ -45,8 +46,10 @@ Thumbs.db
 *.sublime-workspace
 .vscode
 
-# Compiled Python files
 *.pyc
+__pycache__/
+venv/
+.venv/
 
 # Custom
 composer.lock
@@ -58,5 +61,3 @@ vendor
 npm-debug.log
 yarn-error.log
 .phpunit-watcher-cache.php
-venv/
-.venv/

@@ -7,14 +7,33 @@
 # Easier Navigation
 # -----------------------------------------------------------------------------
 
+# Enables simple aliases to be sudo'ed.
+# See http://www.gnu.org/software/bash/manual/bashref.html#Aliases
+alias sudo='sudo ';
+
 # All commands supplied by oh-my-zsh
 
 
 # Directory Browsing
 # -----------------------------------------------------------------------------
 
-alias ll='ls -lhF -G'
-alias la='ls -lhaF -G'
+# Lists log list of files, including hidden, with human-readable sizes. Appends paths
+# -l display as list
+# -h show human-readable sizes
+# -a show hidden files
+# -F display a slash (‘/’) immediately after each pathname that is a directory...
+# -G enable colorized output
+alias ll='ls -lhFa -G'
+
+# Lists log list of files, including hidden, excluding . and .. directories, with human-readable sizes. Appends paths
+# -A show hidden files, excluding . and .. directories
+alias la='ls -lhFA -G'
+
+# Lists directories only, in long format.
+alias lsd='ls -l | grep --color=never "^d"'
+
+# Lists hidden files only, in long format.
+alias lsh='ls -dlA .?*'
 
 
 # File management
@@ -39,11 +58,20 @@ alias c='clear'
 # Pretty print the PATH
 alias path='echo $PATH | tr -s ":" "\n"'
 
-# Too hart to pronounce 😀
+# Too hard to pronounce 😀
 alias cm='chezmoi'
 
+# Searches history
 alias h='history_search' # see file `.zsh_functions`
+alias hs='history_session_search' # see file `functions`
+# Shows list of the jobs that are running in the background and in the foreground
 alias j='jobs'
+
+# Reloads the shell.
+alias reload='exec $SHELL -l'
+
+# Reloads the shell configuration.
+alias re.='source $HOME/.zshrc'
 
 
 # Networking
@@ -82,6 +110,9 @@ command -v lwp-request &> /dev/null && for method in GET HEAD POST PUT DELETE TR
 done
 unset method;
 
+# Pings hostname(s) 30 times in quick succession.
+alias fping='ping -c 30 -i.2'
+
 
 # System Administration
 # -----------------------------------------------------------------------------
@@ -104,6 +135,40 @@ done
 # Improves top with modern alternatives.
 if type 'htop' &> /dev/null; then
     alias top='htop'
+fi
+
+
+# Power Management
+# -----------------------------------------------------------------------------
+
+# Locks the session.
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    alias lock="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
+elif command -v vlock &> /dev/null; then
+    alias lock='vlock --all'
+elif command -v gnome-screensaver-command &> /dev/null; then
+    alias lock='gnome-screensaver-command --lock'
+fi
+
+# Hibernates the system.
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    alias hibernate='pmset sleep now'
+else
+    alias hibernate='systemctl suspend'
+fi
+
+# Restarts the system.
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    alias reboot='osascript -e "tell application \"System Events\" to restart"'
+else
+    alias reboot='sudo /sbin/reboot'
+fi
+
+# Shuts down the system.
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    alias poweroff='osascript -e "tell application \"System Events\" to shut down"'
+else
+    alias poweroff='sudo /sbin/poweroff'
 fi
 
 
@@ -162,15 +227,26 @@ alias dc='docker-compose'
 alias ds='docker-sync'
 
 # Creates shortcut for Git.
-alias g='git'
+# All aliases are here:
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 alias gitp='git push --follow-tags origin master'
 
 
 # Other
 # -----------------------------------------------------------------------------
 
+# Displays drives and space in human-readable format.
 alias df='df -kh'
-alias du='du -kh'
+
+# Prints disk usage per directory non-recursively, in human-readable format.
+alias du='du -h -d1'
 
 # Upgraded cat
 alias bcat='bat --theme=OneHalfDark'
+
+# Makes file commands verbose.
+alias cp='cp -v';
+alias mv='mv -v';
+
+# Makes `mount` command output pretty and with a human-readable format.
+alias mount='mount | column -t'

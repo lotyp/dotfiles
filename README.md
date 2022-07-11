@@ -73,6 +73,18 @@ Currently only supported is [iTerm2](https://iterm2.com/) for macOS, but I plan 
 | [zsh](https://zsh.sourceforge.io) | interactive shell                        | `~/.zshrc` and others |
 | [ohmyzsh](https://ohmyz.sh)       | framework for managing zsh configuration | `~/.oh-my-zsh/`       |
 
+### → Shell Plugins
+
+List of enabled built-in and third-party omz plugins by default. Plu
+
+| Plugin                                                       | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) | Provides many [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases) and a few useful [functions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#functions) |
+| [keychain](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/keychain) | Starts [`keychain`](https://www.funtoo.org/Keychain) to set up and load whichever credentials you want for both gpg and ssh connections |
+| [gpg-agent](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gpg-agent/README.md) | Enables [GPG's gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/) if it is not running |
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) _<sup>[3rd-party]</sup>_ | Suggests commands as you type based on history and completions |
+| [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo) | Prefix previous commands with `sudo` by pressing `esc` twice |
+
 ### → Shell Theme
 
 | Name                                                         | Description      | Config             |
@@ -81,7 +93,9 @@ Currently only supported is [iTerm2](https://iterm2.com/) for macOS, but I plan 
 
 ### → Package Management
 
-Only minimal list of apps are defined in `~/.Brewfile`. For full macOS installation and configuration refer to ansible playbook — [mac provisioner](https://github.com/wayofdev/mac-provisioner)
+Only minimal list of apps are defined in `~/.Brewfile`.
+
+For full macOS installation and configuration refer to ansible playbook — [mac provisioner](https://github.com/wayofdev/mac-provisioner)
 
 | Name                        | Description               | Config        |
 | --------------------------- | ------------------------- | ------------- |
@@ -123,7 +137,10 @@ Additional aliases are provided by [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzs
 | Command | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | `l`     | Show long list with hidden files with human readable sizes   |
-| `la`    | Show long list with hidden files with human readable sizes. Appends paths |
+| `ll`    | Lists log list of files, including hidden, with human-readable sizes. Appends `/` to end of directories. |
+| `la`    | Lists log list of files, including hidden, excluding `.` and `..` directories, with human-readable sizes. Appends `/` to end of directories. |
+| `lsd`   | Lists directories only, in long format                       |
+| `lsh`   | Lists hidden files in long format                            |
 
 ### → File Management
 
@@ -135,23 +152,27 @@ Additional aliases are provided by [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzs
 
 ### → General Aliases
 
-| Command | Description                                     |
-| ------- | ----------------------------------------------- |
-| `alias` | Lists registered aliases                        |
-| `c`     | Clears the console screen                       |
-| `path`  | Pretty prints registered system $PATH variables |
-| `cm`    | Short command to chezmoi                        |
-| `h`     | Shows or searches in shell history              |
+| Command   | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| `alias`   | Lists registered aliases                                     |
+| `c`       | Clears the console screen                                    |
+| `path`    | Pretty prints registered system $PATH variables              |
+| `cm`      | Short command to chezmoi                                     |
+| `h`, `hs` | Shows or searches in shell (session) history                 |
+| `j`       | Shows list of the jobs that are running in the background and in the foreground |
+| `reload`  | Reloads the shell                                            |
+| `re.`     | Reloads the shell configuration                              |
 
 ### → Networking
 
-| Command                                                      | Description                                                |
-| ------------------------------------------------------------ | ---------------------------------------------------------- |
-| `flushdns`                                                   | Flushes the DNS cache                                      |
-| `ips`                                                        | Gets all IP addresses                                      |
-| `localip`                                                    | Gets local IP address                                      |
-| `publicip`                                                   | Gets external IP address                                   |
-| `GET`<br/>`HEAD`<br/>`POST`<br/>`PUT`<br/>`DELETE`<br/>`TRACE`<br/>`OPTIONS` | Sends HTTP requests:<br/>_Usage: `GET https://example.com` |
+| Command                                                      | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `flushdns`                                                   | Flushes the DNS cache                                        |
+| `ips`                                                        | Gets all IP addresses                                        |
+| `localip`                                                    | Gets local IP address                                        |
+| `publicip`                                                   | Gets external IP address                                     |
+| `GET`<br/>`HEAD`<br/>`POST`<br/>`PUT`<br/>`DELETE`<br/>`TRACE`<br/>`OPTIONS` | Sends HTTP requests using lwp-request:<br/>_Usage: `GET https://example.com` |
+| `fping`                                                      | Pings hostname(s) 30 times in quick succession               |
 
 ### → System Administration
 
@@ -160,6 +181,15 @@ Additional aliases are provided by [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzs
 | `mnt`     | Lists drive mounts                                           |
 | `sysinfo` | Shows system info using [neofetch](https://github.com/dylanaraps/neofetch) |
 | `top`     | Monitors processes and system resources, uses [htop](https://hisham.hm/htop/). |
+
+### → Power Management
+
+| Command     | Description           |
+| ----------- | --------------------- |
+| `lock`      | Locks the session     |
+| `hibernate` | Hibernates the system |
+| `poweroff`  | Shuts down the system |
+| `reboot`    | Restarts the system   |
 
 ### → Paths
 
@@ -190,13 +220,13 @@ Additional aliases are provided by [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzs
 
 ### → Development
 
-| Command | Description                                        |
-| ------- | -------------------------------------------------- |
-| `d`     | Shortcut to `docker`                               |
-| `dc`    | Shortcut to `docker-compose`                       |
-| `ds`    | Shortcut to `docker-sync`                          |
-| `g`     | Shortcut to `git`                                  |
-| `gitp`  | Shortcut to `git push --follow-tags origin master` |
+| Command | Description                                                |
+| ------- | ---------------------------------------------------------- |
+| `d`     | Shortcut to `docker`                                       |
+| `dc`    | Shortcut to `docker-compose`                               |
+| `ds`    | Shortcut to `docker-sync`                                  |
+| `g`     | Shortcut to `git`. Full List of git aliases is listed here |
+| `gitp`  | Shortcut to `git push --follow-tags origin master`         |
 
 For full list of available commands check [aliases](https://github.com/lotyp/dotfiles/blob/master/dot_gitconfig_aliases) and [functions](https://github.com/lotyp/dotfiles/blob/master/dot_zsh_functions) files.
 

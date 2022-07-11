@@ -76,7 +76,7 @@
     browser = google-chrome
 
 [credential]
-{{ if eq .chezmoi.os "darwin" -}}
+{{- if eq .chezmoi.os "darwin" }}
     helper = osxkeychain
 {{- end }}
 

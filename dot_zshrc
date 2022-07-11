@@ -15,7 +15,10 @@ zstyle ':omz:update' mode auto
 
 plugins=(
     git
+    keychain
+    gpg-agent
     zsh-autosuggestions
+    sudo
 )
 
 source ${ZSH}/oh-my-zsh.sh
