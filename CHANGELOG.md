@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/lotyp/dotfiles/compare/v1.2.0...v1.3.0) (2022-07-11)
+
+
+### Features
+
+* added Brewfile, fixes in readme ([d9952d3](https://github.com/lotyp/dotfiles/commit/d9952d3c06baa924dca0afe265527838213d78cd))
+* adding ctop, two zsh plugins, updates to readme ([4fdc0c0](https://github.com/lotyp/dotfiles/commit/4fdc0c0ccb76ed376f6991a7201f8851dd725f3b))
+* adding extra aliases, updated readme ([0e69297](https://github.com/lotyp/dotfiles/commit/0e69297d0a8769803e895235c1b4b7f3e6a2c545))
+* adding lwd plugin, gnupg config ([11749d1](https://github.com/lotyp/dotfiles/commit/11749d1cd2eff286942ff06b9565e78d37750987))
+
 ## [1.2.0](https://github.com/lotyp/dotfiles/compare/v1.1.0...v1.2.0) (2022-07-10)
 
 
