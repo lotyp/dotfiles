@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/lotyp/dotfiles/compare/v1.3.0...v1.4.0) (2022-07-13)
+
+
+### Features
+
+* adding iterm2 settings ([5211487](https://github.com/lotyp/dotfiles/commit/52114878516db99fb5503483432d09a740e2d33c))
+
+
+### Bug Fixes
+
+* iterm2 was not following symlinks ([a7fb6a9](https://github.com/lotyp/dotfiles/commit/a7fb6a9c8d3f1d95dd0233a52018138b02c9c2f4))
+* symlinking with cm now is working ([927a979](https://github.com/lotyp/dotfiles/commit/927a97998bd45793ee74ac96bb9a145a53ff742c))
+* temporary do not commit as lfs ([f1a3932](https://github.com/lotyp/dotfiles/commit/f1a3932d74e323c896aba0dcafb8c937786faba3))
+
 ## [1.3.0](https://github.com/lotyp/dotfiles/compare/v1.2.0...v1.3.0) (2022-07-11)
 
 
