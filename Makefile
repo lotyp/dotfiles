@@ -9,10 +9,12 @@ POETRY_RUNNER ?= poetry run
 CM_BIN ?= chezmoi
 CM_REPOSITORY ?= https://github.com/lotyp/dotfiles.git
 
-install-cm:
+install-chezmoi:
 	# @todo
 	# https://github.com/chezmoi/dotfiles/blob/master/install.sh
-.PHONY: install-cm
+	@echo "Installing chezmoi..."
+	bash ./scripts/install_chezmoi.sh | tee -a $(LOGFILE) || exit 1
+.PHONY: install-chezmoi
 
 install-deps:
 	$(POETRY_BIN) install
@@ -29,7 +31,7 @@ endif
 
 # Init chezmoi
 init:
-	$(CM_BIN) init $(CM_REPOSITORY)
+	$(CM_BIN) init $(CM_REPOSITORY) -v
 .PHONY: init
 
 ### Git
