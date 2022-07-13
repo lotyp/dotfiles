@@ -26,7 +26,7 @@ This repository is a part of [ansible-role-dotfiles](https://github.com/wayofdev
 
 If you **like/use** this role, please consider **starring** it. Thanks!
 
-<br>
+![Screenshot](assets/screenshot.png)
 
 ## 🗂 Table of Contents
 
